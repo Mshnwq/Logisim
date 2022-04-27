@@ -1,0 +1,8 @@
+Version 1: load program on old circuit without stall and bubble
+	it did not function becausu the instruction did not a stall hazard from them being dependent
+
+Version 2: modified load program with NOP on old circuit without stall and bubble
+	it functioned properly becaused NOP replaced the stall hazar, which worked around the dependency
+
+Version 3: load program on new circuit with stall and bubble
+	it functioned properly because the hazard controller now is handling load and dependent instructions by performing a stall

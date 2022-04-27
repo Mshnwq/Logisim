@@ -1,0 +1,1 @@
+(Rs != 0) AND (Rs == Rd2) AND (EX_RegWrite)
