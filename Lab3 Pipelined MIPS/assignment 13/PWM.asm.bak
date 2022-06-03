@@ -1,0 +1,36 @@
+.data
+.text
+ 	
+			# clear the registers
+			and  $t0, $t0, $zero
+			and  $t1, $t1, $zero
+			and  $t2, $t2, $zero
+			and  $t3, $t3, $zero
+			
+			# initializze the values
+			addi $t1, $zero, 23    # Duty Cycle
+			addi $t2, $zero, 100   
+		   
+	
+div_loop:	addi $t0, $zero, 1     
+L1:			addi $t3, $t3, 1
+			bne $t3, $t1, L1
+			and $t0, $t0, $zero
+L2:			sub $t1, $t1, $t2        #subtract $t2 from $t1
+	addi $t0, $t0, 1         #add one to qutiont
+	
+	bne $t1, $t2, div_loop   #if $t1 equalls $t2, subtract then break
+
+	
+	#the case of no remainder
+        sub $t1, $t1, $t2        #subtract $t2 from $t1
+        addi $t0, $t0, 1         #add one to qutiont
+        
+        j  end                   #break
+        
+end:	
+
+
+	
+	
+	
